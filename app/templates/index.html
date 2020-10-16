@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 <!-- Content block -->
 {% block body %}
-<div class="container-fluid" style="margin: 0; padding: 0;">
+<div class="container-fluid flex flex-column" style="margin: 0; padding: 0;">
   <nav class="navbar fixed-top navbar-expand-lg">
     <a class="navbar-brand" href="#">
       <img src="static/images/booky (1).png" alt="logo" />
@@ -29,9 +29,14 @@
   </nav>
 
   <div class="background">
-
+    <div class="row">
+      <div class="col-md-12, col-lg-12, col-xs-12, col-xl-12">
+        <p>Making Books Available to Everyone.</p>
+        <button>Create an account</button>
+      </div>
+    </div>
   </div>
 </div>
- 
+
 
 {% endblock %}
