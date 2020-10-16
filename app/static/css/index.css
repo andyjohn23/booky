@@ -1,0 +1,26 @@
+.navbar{
+    background-color:#FAFAFA;
+}
+.navbar-brand{
+    color:black;
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar-brand:hover{
+    color: black;
+}
+.navbar-brand img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+.navbar li a{
+    color: black;
+    font-size: 16px;
+}
+.navbar-nav{
+    margin-right: 14%;
+}
+.search-form{
+    margin-right: 5%;
+}
