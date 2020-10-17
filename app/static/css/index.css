@@ -1,5 +1,6 @@
 .navbar{
     background-color:#FFFF;
+    border-bottom: 1px solid grey;
 }
 .navbar-brand{
     color:black;
@@ -25,17 +26,16 @@
     margin-right: 5%;
 }
 .background{
-    background-image: url("../images/booky-background.jpg"), linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("../images/booky-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    margin-top: 5%;
     overflow-x: hidden;
 }
 .background p{
-    padding-top: 210px;
-    padding-left: 300px;
+    padding-top: 280px;
+    padding-left: 340px;
     font-size: 42px;
     color: white;
     font-weight: 200;
@@ -48,7 +48,7 @@
     border-radius: 10px;
     font-size: 15px;
     font-weight: bold;
-    margin-left: 40%;
+    margin-left: 42%;
     outline: none;
     border: none;
     background-color: #DEDFF0;
@@ -56,4 +56,32 @@
 }
 .background button:hover{
     background-color: rgba(222, 223, 240, 0.8);
+}
+.book-library{
+    display: grid;
+    grid-template-rows:  auto auto auto;
+    display: inline-block;
+    margin-top: 12%;
+}.book-library a{
+    text-decoration: none;
+}
+.book-library h3{
+    font-size: 18px;
+    color: black;
+}
+.book-library p{
+    font-size: 13px;
+    color: black;
+    line-height: 15px;
+}
+.book-library .card{
+    max-width: 40%;
+    max-height: 100%;
+    line-height: 10px;
+    background-color: rgba(88, 171, 226, 0.2);
+}
+.book-library .card img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }

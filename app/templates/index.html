@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container-fluid flex flex-column" style="margin: 0; padding: 0;">
   <nav class="navbar fixed-top navbar-expand-lg">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="static/images/booky (1).png" alt="logo" />
       BOOKY
     </a>
@@ -21,9 +21,9 @@
           <a class="nav-link" href="#">Why Booky</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 search-form">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search by title, ISBN" aria-label="Search">
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+      <form action="/query" method="GET" class="form-inline my-2 my-lg-0 search-form">
+        <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search by title, ISBN" aria-label="Search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" name="search" id="search_button">Search</button>
       </form>
     </div>
   </nav>
