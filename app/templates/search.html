@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="nav-link" href="#">Why Booky</a>
@@ -34,12 +34,13 @@
     <div class="controls">
         {% if start - 21 >= 0 %}
         <a href="/query?search={{ search }}&start={{ start - 21 }}">
-            <span id="prev" class="pl1">Previous</span>
+            <button id="prev">Previous</button>
         </a>
         {% endif %}
-        <span>Page {{ start }}-{{ count }}</span> {% if data["items"]|length == 20 %}
+        
+        {% if data["items"]|length == 20 %}
         <a href="/query?search={{ search }}&start={{ start + 19 }}">
-            <span id="next" class="pr1">Next</span>
+            <button id="next">Next</button>
         </a>
         {% endif %}
     </div>
@@ -79,12 +80,13 @@
     <div class="footer-controls">
         {% if start - 21 >= 0 %}
         <a href="/query?search={{ search }}&start={{ start - 21 }}">
-            <span id="prev" class="pl1">Previous</span>
+            <button id="prev">Previous</button>
         </a>
         {% endif %}
-        <span>Page {{ start }}-{{ count }}</span> {% if data["items"]|length == 20 %}
+
+        {% if data["items"]|length == 20 %}
         <a href="/query?search={{ search }}&start={{ start + 19 }}">
-            <span id="next" class="pr1">Next</span>
+            <button id="next">Next</button>
         </a>
         {% endif %}
     </div>
