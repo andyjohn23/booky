@@ -74,19 +74,19 @@
         </div>
 
         {% endfor %}
-
-        <div>
-            {% if start - 21 >= 0 %}
-            <a href="/query?search={{ search }}&start={{ start - 21 }}">
-                <span id="prev" class="pl1">Previous</span>
-            </a>
-            {% endif %}
-            <span>Page {{ start }}-{{ count }}</span> {% if data["items"]|length == 20 %}
-            <a href="/query?search={{ search }}&start={{ start + 19 }}">
-                <span id="next" class="pr1">Next</span>
-            </a>
-            {% endif %}
-        </div>
-        {% endblock %}
     </div>
+
+    <div class="footer-controls">
+        {% if start - 21 >= 0 %}
+        <a href="/query?search={{ search }}&start={{ start - 21 }}">
+            <span id="prev" class="pl1">Previous</span>
+        </a>
+        {% endif %}
+        <span>Page {{ start }}-{{ count }}</span> {% if data["items"]|length == 20 %}
+        <a href="/query?search={{ search }}&start={{ start + 19 }}">
+            <span id="next" class="pr1">Next</span>
+        </a>
+        {% endif %}
+    </div>
+    {% endblock %}
 </div>
