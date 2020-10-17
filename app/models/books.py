@@ -51,7 +51,9 @@ class Books():
         return ", ".join(authors_list)
 
     def _parse_thumbnail(self, imageLinks=""):
-        """Add generic image to imageLinks if empty, else return input"""
+        """
+        Adding own image if there is no image for book covers
+        """
         if not imageLinks:
             return {"thumbnail": "static/images/booky-book.jpg"}
         else:

@@ -59,29 +59,36 @@
 }
 .book-library{
     display: grid;
-    grid-template-rows:  auto auto auto;
-    display: inline-block;
-    margin-top: 12%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+    margin-top: 4%;
 }.book-library a{
     text-decoration: none;
 }
 .book-library h3{
     font-size: 18px;
     color: black;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .book-library p{
     font-size: 13px;
     color: black;
-    line-height: 15px;
 }
 .book-library .card{
-    max-width: 40%;
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 200px;
     line-height: 10px;
     background-color: rgba(88, 171, 226, 0.2);
 }
 .book-library .card img{
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+.controls{
+    margin-top: 12%;
 }
