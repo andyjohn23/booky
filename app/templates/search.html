@@ -1,50 +1,8 @@
 {% extends "base.html" %}
 
 <!-- Content block -->
-{% block body %}
+{% block content %}
 <div class="container-fluid flex flex-column" style="margin: 0; padding: 0;">
-    <nav class="navbar fixed-top navbar-expand-lg">
-        <a class="navbar-brand" href="/">
-            <img src="static/images/booky (1).png" alt="logo" />
-            BOOKY
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>&nbsp;&nbsp;
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Why Booky</a>
-                </li>
-            </ul>
-            <form action="/query" method="GET" class="form-inline my-2 my-lg-0 search-form">
-                <input class="form-control mr-sm-2" type="search" id="search" name="search"
-                    placeholder="Search by title, ISBN" aria-label="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" name="search"
-                    id="search_button">Search</button>
-            </form>
-        </div>
-    </nav>
-
-    <div class="controls">
-        {% if start - 21 >= 0 %}
-        <a href="/query?search={{ search }}&start={{ start - 21 }}">
-            <button id="prev">Previous</button>
-        </a>
-        {% endif %}
-        
-        {% if data["items"]|length == 20 %}
-        <a href="/query?search={{ search }}&start={{ start + 19 }}">
-            <button id="next">Next</button>
-        </a>
-        {% endif %}
-    </div>
-
     <div class="container book-library">
         {% for book in data["items"] %}
         <div class="row">
@@ -59,7 +17,7 @@
                             <div class="col-md-8">
                                 <div class="card-body" style="margin-top: -4%;">
                                     <h3>Title</h3>
-                                    <p>{{ book.title }}</p>
+                                    <p>{{ book.title|truncatechars:25 }}</p>
 
                                     <h3>Author(s)</h3>
                                     <p>{{ book.authors }}</p>
@@ -90,5 +48,5 @@
         </a>
         {% endif %}
     </div>
-    {% endblock %}
 </div>
+{% endblock %}
